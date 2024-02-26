@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mysqlapp:
+    image: mysql:8.3.0
+    container_name: Mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+    ports:
+      - 3306:3306
+    networks:
+      - wbs-app-network
+
+networks:
+  wbs-app-network:
+    driver: bridge
